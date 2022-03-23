@@ -3,6 +3,11 @@ package appProjectWorkingWithProduct;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 
 public class ProductRepository {
 
@@ -38,4 +43,17 @@ public class ProductRepository {
         System.out.println("hours was added");
     }
 
+    public void addingEmployeeToProduct(Long productNumber, Integer employeeId){
+        EmployeeRepository employeeRepository = new EmployeeRepository();
+        Transaction transaction = session.beginTransaction();
+        Product productToAdd = findByProductNumber(productNumber);
+        Employee employeeToGetProduct = employeeRepository.findByEmployeeId(employeeId);
+        List<Employee> employeesThatHasProduct = new ArrayList<>();
+        employeesThatHasProduct.add(employeeToGetProduct);
+        productToAdd.setEmployees(employeesThatHasProduct);
+        session.persist(productToAdd);
+        transaction.commit();
+        System.out.println("Employee " + employeeToGetProduct + " was added to " + productToAdd);
+    }
+    // TODO metodas istraukti pirmiausia employee arba product su visom sasajom ir dadeti butent ten dar viena reikalinga ir tada sukist atgal
 }

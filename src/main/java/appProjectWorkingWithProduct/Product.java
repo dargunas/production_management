@@ -3,24 +3,25 @@ package appProjectWorkingWithProduct;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import java.util.*;
+import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 
 
 @Entity
-@AllArgsConstructor
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Builder
 
+@AllArgsConstructor
+@Builder
 public class Product {
 
     @Id
-    private Long productNumber;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long productId;
 
     private Integer givenHoursForProduction;
     private Integer hoursLeftForProduction;
@@ -29,7 +30,7 @@ public class Product {
     private Date productionEndDate;
     private Date productionStartDate;
 
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(mappedBy = "products", cascade = CascadeType.PERSIST)
     @ToString.Exclude
     private List<Employee> employees;
 
@@ -38,7 +39,7 @@ public class Product {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
         Product product = (Product) o;
-        return productNumber != null && Objects.equals(productNumber, product.productNumber);
+        return productId != null && Objects.equals(productId, product.productId);
     }
 
     @Override

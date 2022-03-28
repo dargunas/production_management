@@ -4,10 +4,8 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -16,7 +14,6 @@ import java.util.Set;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder
-
 public class Employee {
 
     @Id
@@ -27,11 +24,11 @@ public class Employee {
     private String startingDate;
     private String workShopName;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable (
             name = "employee_product",
-            joinColumns = { @JoinColumn(name = "employee_id")},
-            inverseJoinColumns = {@JoinColumn(name = "product_id")})
+            joinColumns = { @JoinColumn(name = "employeeId")},
+            inverseJoinColumns = {@JoinColumn(name = "productId")})
     @ToString.Exclude
     private List<Product> products;
 

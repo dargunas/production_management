@@ -14,13 +14,12 @@ public class Main {
         EmployeeAndProductAssignment employeeAndProductAssignment = new EmployeeAndProductAssignment();
         EmployeeRepository employeeRepository = new EmployeeRepository();
         ProductRepository productRepository = new ProductRepository();
-
+        UserMenu userMenu = new UserMenu();
         Session session = HibernateUtil.getSessionFactory().openSession();
-
         session.beginTransaction();
 
-       // employeeAndProductAssignment.assignEmployeeWithProduct(1, 5L);
-        employeeAndProductAssignment.assignEmployeeWithProduct(1, 7L);
+        userMenu.menuForUser();
+
         session.getTransaction().commit();
 
     }

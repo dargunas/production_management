@@ -27,8 +27,8 @@ public class Product {
     private Integer hoursLeftForProduction;
     private Integer hoursUsedForProduction;
     private Double priceOfProduct;
-    private Date productionEndDate;
-    private Date productionStartDate;
+    private String productionEndDate;
+    private String productionStartDate;
 
     @ManyToMany(mappedBy = "products", cascade = CascadeType.PERSIST)
     @ToString.Exclude

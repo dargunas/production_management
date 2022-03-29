@@ -27,5 +27,13 @@ public class EmployeeAndProductAssignment {
         System.out.println("Product was assigned " + employeeToAssign + employeeToAssign.getProducts());
     }
 
+    public void disAssignEmployeeFromProduct(Integer employeeId, Long productId) {
+        Transaction transaction = session.beginTransaction();
+        Employee employeeToDisAssign = employeeRepository.findByEmployeeId(employeeId);
+
+
+
+    }
+
 
 }

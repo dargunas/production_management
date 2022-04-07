@@ -15,7 +15,7 @@ public class EmployeeAndProductAssignment {
     public void assignEmployeeWithProduct(Integer employeeId, Long productId) {
         Transaction transaction = session.beginTransaction();
         Employee employeeToAssign = employeeRepository.findByEmployeeId(employeeId);
-        Product productToAssign = productRepository.findByProductNumber(productId);
+        Product productToAssign = productRepository.findByProductId(productId);
         List<Product> products = new ArrayList<>();
         products.addAll(employeeToAssign.getProducts());
         products.add(productToAssign);
@@ -26,14 +26,4 @@ public class EmployeeAndProductAssignment {
         transaction.commit();
         System.out.println("Product was assigned " + employeeToAssign + employeeToAssign.getProducts());
     }
-
-    public void disAssignEmployeeFromProduct(Integer employeeId, Long productId) {
-        Transaction transaction = session.beginTransaction();
-        Employee employeeToDisAssign = employeeRepository.findByEmployeeId(employeeId);
-
-
-
-    }
-
-
 }

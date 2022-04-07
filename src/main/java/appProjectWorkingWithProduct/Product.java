@@ -29,6 +29,7 @@ public class Product {
     private Double priceOfProduct;
     private String productionEndDate;
     private String productionStartDate;
+    private Integer isReady;
 
     @ManyToMany(mappedBy = "products", cascade = CascadeType.PERSIST)
     @ToString.Exclude

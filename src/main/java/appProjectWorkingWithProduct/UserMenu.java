@@ -1,7 +1,5 @@
 package appProjectWorkingWithProduct;
 
-import javax.sound.midi.Soundbank;
-import java.util.Date;
 import java.util.Scanner;
 
 public class UserMenu {
@@ -11,19 +9,17 @@ public class UserMenu {
     ProductRepository productRepository = new ProductRepository();
     EmployeeRepository employeeRepository = new EmployeeRepository();
 
+
+    //TODO prideti product istrynima, showAllEmployees ir showAllProducts i atitinkamas vietas, prideti product paruosimo lygi.
     public void menuForUser() {
-
-        //while (isRunning) {
-
         System.out.println(" Modify employees owned products PRESS -> 1");
-
         System.out.println(" Add worked hors of product PRESS -> 2");
-
         System.out.println(" Add employee PRESS -> 3");
-
         System.out.println(" Add product PRESS -> 4");
+        System.out.println(" Delete Employee -> 5");
 
-        System.out.println(" Exit menu PRESS -> 5");
+
+        System.out.println(" Exit menu PRESS -> 6");
         try {
             int userElection = scanner.nextInt();
             while (isRunning) {
@@ -35,7 +31,9 @@ public class UserMenu {
                     subMenuForAddingNewEmployee();
                 } else if (userElection == 4) {
                     subMenuForAddingNewProduct();
-                } else if (userElection == 5) {
+                }else if (userElection == 5){
+                    subMenuForDeletingEmployee();
+                } else if (userElection == 6) {
                     break;
                 } else System.out.println("!!!!!!!!!!!!!!!!!Enter valid integer!!!!!!!!!!!!!!!!!!!!");
                 menuForUser();
@@ -92,6 +90,7 @@ public class UserMenu {
         employeeRepository.saveEmployee(employee);
 
     }
+//TODO nera producto paruosimo lygio pridedama
 
     public void subMenuForAddingNewProduct() {
 
@@ -113,6 +112,14 @@ public class UserMenu {
                 .hoursUsedForProduction(0)
                 .build();
         productRepository.saveProduct(product);
+    }
+
+    public void  subMenuForDeletingEmployee() {
+
+        System.out.println(" Write employeeId what you prefer to delete ");
+        System.out.println();
+        Integer employeeId = scanner.nextInt();
+        employeeRepository.deleteByEmployeeId(employeeId);
     }
 
 

@@ -3,8 +3,6 @@ package appProjectWorkingWithProduct;
 
 import org.hibernate.Session;
 
-import java.util.List;
-import java.util.Scanner;
 
 public class Main {
 
@@ -17,9 +15,16 @@ public class Main {
         UserMenu userMenu = new UserMenu();
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-
-        userMenu.menuForUser();
-
+        //userMenu.menuForUser();
+        //employeeAndProductAssignment.assignEmployeeWithProduct(1, 2L);
+        //employeeRepository.deleteByEmployeeId1(2);
+        // productRepository.deleteByProductId(2L);
+        //productRepository.markProductWhenItIsReady(1L);
+        //Product product = productRepository.findByProductId(1L);
+        //System.out.println(product);
+        //employeeRepository.findAllEmployees();
+        employeeRepository.printAllEmployee();
+        productRepository.showAllProducts();
         session.getTransaction().commit();
 
     }

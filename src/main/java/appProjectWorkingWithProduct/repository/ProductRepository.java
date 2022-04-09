@@ -1,10 +1,11 @@
-package appProjectWorkingWithProduct;
+package appProjectWorkingWithProduct.repository;
 
+import appProjectWorkingWithProduct.HibernateUtil;
+import appProjectWorkingWithProduct.sqlClasses.Product;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
-import java.util.Locale;
 
 
 public class ProductRepository {
@@ -54,7 +55,9 @@ public class ProductRepository {
         product.setIsReady(1);
         session.update(product);
         transaction.commit();
-        System.out.println(" Product is Ready");
+        System.out.println();
+        System.out.println(" <-----Product is Ready-----> ");
+        System.out.println();
     }
 
     public boolean isProductReady(Long productId) {

@@ -1,10 +1,9 @@
-package appProjectWorkingWithProduct;
+package appProjectWorkingWithProduct.sqlClasses;
 
 import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 

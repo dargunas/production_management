@@ -1,4 +1,4 @@
-package appProjectWorkingWithProduct;
+package appProjectWorkingWithProduct.sqlClasses;
 
 import lombok.*;
 import org.hibernate.Hibernate;

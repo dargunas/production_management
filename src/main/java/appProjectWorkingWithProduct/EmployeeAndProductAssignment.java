@@ -1,5 +1,9 @@
 package appProjectWorkingWithProduct;
 
+import appProjectWorkingWithProduct.repository.EmployeeRepository;
+import appProjectWorkingWithProduct.repository.ProductRepository;
+import appProjectWorkingWithProduct.sqlClasses.Employee;
+import appProjectWorkingWithProduct.sqlClasses.Product;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

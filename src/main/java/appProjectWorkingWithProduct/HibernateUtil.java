@@ -1,5 +1,7 @@
 package appProjectWorkingWithProduct;
 
+import appProjectWorkingWithProduct.sqlClasses.Employee;
+import appProjectWorkingWithProduct.sqlClasses.Product;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

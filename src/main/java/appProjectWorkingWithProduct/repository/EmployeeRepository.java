@@ -1,6 +1,6 @@
 package appProjectWorkingWithProduct.repository;
 
-import appProjectWorkingWithProduct.HibernateUtil;
+import appProjectWorkingWithProduct.connectionUtils.HibernateUtil;
 import appProjectWorkingWithProduct.UserMenu;
 import appProjectWorkingWithProduct.sqlClasses.Employee;
 import org.hibernate.Session;
@@ -23,6 +23,7 @@ public class EmployeeRepository {
         List<Employee> employees = session.createQuery("FROM Employee", Employee.class).list();
         return employees;
     }
+
 
     public void printAllEmployee() {
         UserMenu userMenu = new UserMenu();

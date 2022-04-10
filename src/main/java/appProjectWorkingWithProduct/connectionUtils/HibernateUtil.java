@@ -1,4 +1,4 @@
-package appProjectWorkingWithProduct;
+package appProjectWorkingWithProduct.connectionUtils;
 
 import appProjectWorkingWithProduct.sqlClasses.Employee;
 import appProjectWorkingWithProduct.sqlClasses.Product;

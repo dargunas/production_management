@@ -1,6 +1,6 @@
 package appProjectWorkingWithProduct.repository;
 
-import appProjectWorkingWithProduct.HibernateUtil;
+import appProjectWorkingWithProduct.connectionUtils.HibernateUtil;
 import appProjectWorkingWithProduct.sqlClasses.Product;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

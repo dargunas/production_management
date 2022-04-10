@@ -1,5 +1,6 @@
 package appProjectWorkingWithProduct;
 
+import appProjectWorkingWithProduct.connectionUtils.HibernateUtil;
 import appProjectWorkingWithProduct.repository.EmployeeRepository;
 import appProjectWorkingWithProduct.repository.ProductRepository;
 import appProjectWorkingWithProduct.sqlClasses.Employee;
